@@ -5,49 +5,32 @@ on:
     # Thursday at 7 PM UTC (adjust for your timezone if needed)
     # For 7 PM IST (India), use: '30 13 * * 4'
     - cron: '0 19 * * 4'
-  
+
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
   send-email:
     runs-on: ubuntu-22.04
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
-    
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    
+
     - name: Send tech update email
       env:
         SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
-        SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+        SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
         RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
         YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
       run: |
         python send_tech_update.py
-```
-
-6. Press **Ctrl+S** to save
-
----
-
-## **PART 3: Setting Up Git**
-
-### **Step 8: Open Terminal in VS Code**
-
-1. In VS Code, go to **"Terminal"** menu at the top
-2. Click **"New Terminal"**
-3. A terminal panel will open at the bottom of VS Code
-
-You should see something like:
-```
-PS C:\Users\YourName\Desktop\tech-email-agent>

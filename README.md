@@ -33,10 +33,10 @@ An automated weekly email system that curates personalized tech content includin
 ##  Cost
  
 **Used only free resources**
-- ✅ GitHub Actions: FREE (2,000 minutes/month)
-- ✅ Gmail SMTP: FREE (500 emails/day)
-- ✅ All APIs: FREE tier
-- ✅ **Total: $0/month**
+-  GitHub Actions: FREE (2,000 minutes/month)
+-  Gmail SMTP: FREE (500 emails/day)
+-  All APIs: FREE tier
+-  **Total: $0/month**
  
 ##  Schedule
  
